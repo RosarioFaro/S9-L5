@@ -1,0 +1,9 @@
+.equal-height {
+  height: 300px;
+  object-fit: cover;
+  width: 100%;
+}
+body,
+.navbar {
+  background-color: #221f1f !important;
+}
