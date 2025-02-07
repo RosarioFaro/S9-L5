@@ -7,3 +7,60 @@ body,
 .navbar {
   background-color: #221f1f !important;
 }
+.loader {
+  border: 8px solid #656565;
+  border-top: 8px solid #de0000;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1.5s linear infinite;
+  margin: auto;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.movie-card {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  color: whitesmoke;
+  background-color: rgb(58, 54, 54);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 25px;
+}
+
+.movie-card-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.movie-card img {
+  width: 150px;
+  height: 225px;
+  margin-right: 20px;
+}
+
+.movie-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.movie-info h4 {
+  margin: 0;
+}
+
+.movie-info p {
+  margin: 5px 0;
+}
