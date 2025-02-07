@@ -7,6 +7,9 @@ const MainMovies = ({ query }) => {
   const [loadingMovies, setLoadingMovies] = useState(false);
   const [loadingDetails, setLoadingDetails] = useState(false);
 
+  /* MI SONO FATTO AIUTARE DA CHATGPT PER QUESTO TIMEOUT, NON RIUSCIVO IN NESSUN MODO A FARLO FUNZIONARE */
+  const [timeoutId, setTimeoutId] = useState(null);
+
   useEffect(() => {
     if (!query) return;
 
@@ -41,10 +44,16 @@ const MainMovies = ({ query }) => {
   };
 
   const handleMouseEnter = (movie) => {
-    getMovieDetails(movie.imdbID);
+    const id = setTimeout(() => {
+      getMovieDetails(movie.imdbID);
+    }, 1500);
+    setTimeoutId(id);
   };
 
   const handleMouseLeave = () => {
+    if (timeoutId) {
+      clearTimeout(timeoutId);
+    }
     setShowCard(false);
     setHoveredMovie(null);
   };
